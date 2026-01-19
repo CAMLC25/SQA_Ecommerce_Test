@@ -1,0 +1,17 @@
+src
+└── test
+    └── java
+        └── com.sqa
+            ├── base          // Chứa file cài đặt chung (Setup/Teardown driver)
+            ├── tests
+            │   ├── admin     // 📂 Chứa các file test cho Admin
+            │   │   ├── AdminLoginTest.java
+            │   │   ├── AdminInsertProductTest.java
+            │   │   └── ....
+            │   │
+            │   └── customer  // 📂 Chứa các file test cho Khách hàng
+            │       ├── CustomerRegisterTest.java
+            │       └── CheckoutTest.java
+            │       └── ....
+            │
+            └── utils         // Chứa file đọc dữ liệu Excel, chụp ảnh lỗi...
