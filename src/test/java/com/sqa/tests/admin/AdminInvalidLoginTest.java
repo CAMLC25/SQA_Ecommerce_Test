@@ -29,9 +29,11 @@ public class AdminInvalidLoginTest {
 
         // 2. Nhập Email đúng (admin@mail.com)
         driver.findElement(By.name("admin_email")).sendKeys("admin@mail.com");
+        Thread.sleep(1000);
 
         // 3. Nhập Password SAI (ví dụ: 12345678)
         driver.findElement(By.name("admin_pass")).sendKeys("wrongpassword123");
+        Thread.sleep(1000);
 
         // 4. Click nút Login
         driver.findElement(By.cssSelector("button[type='submit']")).click();

@@ -41,11 +41,11 @@ public class AdminInsertProductTest {
 
         // 1. Vào trang Thêm sản phẩm
         driver.get("http://localhost/ecommerce-website-php/admin_area/index.php?insert_product");
-        Thread.sleep(1000);
-
         // 2. Điền thông tin cơ bản
         driver.findElement(By.name("product_title")).sendKeys("Ao Thun SQA Automation");
+        Thread.sleep(1000);
         driver.findElement(By.name("product_url")).sendKeys("ao-thun-sqa-auto");
+        Thread.sleep(1000);
 
         // 3. Dropdown
         try {
@@ -63,18 +63,17 @@ public class AdminInsertProductTest {
         driver.findElement(By.name("product_img1")).sendKeys(imagePath);
         driver.findElement(By.name("product_img2")).sendKeys(imagePath);
         driver.findElement(By.name("product_img3")).sendKeys(imagePath);
-
+        Thread.sleep(1000);
         // 5. Giá tiền
         driver.findElement(By.name("product_price")).sendKeys("500000");
+        Thread.sleep(1000);
         driver.findElement(By.name("psp_price")).sendKeys("450000");
+        Thread.sleep(1000);
         driver.findElement(By.name("product_keywords")).sendKeys("test");
+        Thread.sleep(1000);
         driver.findElement(By.name("product_label")).sendKeys("New");
+        Thread.sleep(1000);
 
-        // --- [FIX LỖI] BỎ QUA 2 TRƯỜNG DESCRIPTION & FEATURES ---
-        // Vì Editor TinyMCE che mất ô input nên Selenium không điền được.
-        // 2 ô này không bắt buộc nên ta bỏ qua để Test Case chạy thành công.
-        // driver.findElement(By.name("product_desc")).sendKeys("..."); // Đã comment lại
-        // driver.findElement(By.name("product_features")).sendKeys("..."); // Đã comment lại
 
         // 6. Scroll xuống cuối trang để thấy nút Submit (Tránh bị che)
         WebElement submitBtn = driver.findElement(By.name("submit"));
@@ -85,7 +84,7 @@ public class AdminInsertProductTest {
         submitBtn.click();
 
         // 8. Kiểm tra kết quả
-        Thread.sleep(3000); // Chờ upload xong
+        Thread.sleep(5000); // Chờ upload xong
         try {
             Alert alert = driver.switchTo().alert();
             String alertText = alert.getText();
